@@ -11,6 +11,8 @@
 		79C451C32D4AA14D0025CA15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C451C22D4AA14D0025CA15 /* ContentView.swift */; };
 		79C451C52D4AA14E0025CA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C451C42D4AA14E0025CA15 /* Assets.xcassets */; };
 		79C451C92D4AA14E0025CA15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C451C82D4AA14E0025CA15 /* Preview Assets.xcassets */; };
+		79C451D02D4AA1870025CA15 /* RemediosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C451CF2D4AA1870025CA15 /* RemediosViewModel.swift */; };
+		79C451D92D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79C451D72D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,9 @@
 		79C451C42D4AA14E0025CA15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79C451C62D4AA14E0025CA15 /* TestesParaChallenge4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestesParaChallenge4.entitlements; sourceTree = "<group>"; };
 		79C451C82D4AA14E0025CA15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79C451CF2D4AA1870025CA15 /* RemediosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemediosViewModel.swift; sourceTree = "<group>"; };
+		79C451D82D4AA2DA0025CA15 /* RemediosContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemediosContainer.xcdatamodel; sourceTree = "<group>"; };
+		79C451DA2D4AB7D30025CA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +57,11 @@
 		79C451BF2D4AA14D0025CA15 /* TestesParaChallenge4 */ = {
 			isa = PBXGroup;
 			children = (
+				79C451DA2D4AB7D30025CA15 /* Info.plist */,
+				79C451D32D4AA27B0025CA15 /* ViewModel */,
+				79C451D22D4AA2730025CA15 /* Model */,
+				79C451D12D4AA2620025CA15 /* View */,
 				79C451C02D4AA14D0025CA15 /* TestesParaChallenge4App.swift */,
-				79C451C22D4AA14D0025CA15 /* ContentView.swift */,
 				79C451C42D4AA14E0025CA15 /* Assets.xcassets */,
 				79C451C62D4AA14E0025CA15 /* TestesParaChallenge4.entitlements */,
 				79C451C72D4AA14E0025CA15 /* Preview Content */,
@@ -67,6 +75,30 @@
 				79C451C82D4AA14E0025CA15 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79C451D12D4AA2620025CA15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79C451C22D4AA14D0025CA15 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79C451D22D4AA2730025CA15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79C451D72D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79C451D32D4AA27B0025CA15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79C451CF2D4AA1870025CA15 /* RemediosViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				79C451C32D4AA14D0025CA15 /* ContentView.swift in Sources */,
+				79C451D92D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld in Sources */,
 				79C451C12D4AA14D0025CA15 /* TestesParaChallenge4App.swift in Sources */,
+				79C451D02D4AA1870025CA15 /* RemediosViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +306,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TestesParaChallenge4/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestesParaChallenge4/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -308,6 +345,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TestesParaChallenge4/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestesParaChallenge4/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -355,6 +395,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79C451D72D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79C451D82D4AA2DA0025CA15 /* RemediosContainer.xcdatamodel */,
+			);
+			currentVersion = 79C451D82D4AA2DA0025CA15 /* RemediosContainer.xcdatamodel */;
+			path = RemediosContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 79C451B52D4AA14D0025CA15 /* Project object */;
 }
