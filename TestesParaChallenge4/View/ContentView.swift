@@ -16,19 +16,22 @@ struct ContentView: View {
     @State var horaSelecionada = Date()
     @State private var imagem: UIImage?
     @State var photosPickerItem: PhotosPickerItem?
-
-
+    
+    
     
     var body: some View {
+        
+        NavigationView {
+        
         VStack {
             
             TextField("nome", text: $inputText)
             TextField("dosagem", text: $inputTextDosagem)
             DatePicker("Selecione a Hora", selection: $horaSelecionada, displayedComponents: .hourAndMinute)
-                            .datePickerStyle(WheelDatePickerStyle())
+                .datePickerStyle(WheelDatePickerStyle())
             PhotosPicker(selection: $photosPickerItem, matching: .images) {
-      
-                Image(uiImage: imagem ?? UIImage(named: "remedios")!.resized(to:300)!)
+                
+                Image(uiImage: imagem ?? UIImage(named: "remedios")!.resized(to:200)!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100, height: 100)
@@ -36,53 +39,59 @@ struct ContentView: View {
             
             Button("Selecionar Imagem") {
             }
-
+            
             Button("adicionar") {
                 guard let imagem = imagem else { return }
-
-//                let date = NSDate()
+                
+                //                let date = NSDate()
                 var dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "hh:mm"
-//                var data = dateFormatter.string(from: date as Date)
+                //                var data = dateFormatter.string(from: date as Date)
                 
                 
                 
                 guard let imageData = imagem.pngData() else {
-                            print("Erro ao converter imagem para Data")
-                            return
-                        }
+                    print("Erro ao converter imagem para Data")
+                    return
+                }
                 
                 remediosViewModel.addRemedio(nome: inputText, dosagem: Float(inputTextDosagem) ?? 0.0, horario: dateFormatter.string(from: horaSelecionada), imagem: imageData)
-     
+                
             }
             
             List {
                 ForEach(remediosViewModel.entidadeSalvas) {
                     entidade in
-                    
-                    HStack {
+                    if entidade.ativo {
                         
-                        if let data = entidade.imagem {
-                            Image(uiImage: UIImage(data: data)!.resized(to:300)!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 50, height: 50)
-                        } else {
-                            Image(uiImage: UIImage(named: "remedios")!.resized(to:300)!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 50, height: 50)
                             
-                        }
-                     
-                          
-                        
-                        Text("nome: \(entidade.nome ?? "sem nome"), dosagem: \(entidade.dosagem), horario: \(entidade.horario ?? "sem horario")")
+                            NavigationLink {
+                                EditRemedioView(entidade: entidade, remediosViewModel: remediosViewModel)
+                            } label: {
+                                HStack {
+                                    
+                                    if let data = entidade.imagem {
+                                        Image(uiImage: UIImage(data: data)!.resized(to:200)!)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 50, height: 50)
+                                    } else {
+                                        Image(uiImage: UIImage(named: "remedios")!.resized(to:200)!)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 50, height: 50)
+                                        
+                                    }
+                                    
+                                    Text("nome: \(entidade.nome ?? "sem nome"), dosagem: \(entidade.dosagem), horario: \(entidade.horario ?? "sem horario")")
+                                }
+                            }
+ 
                     }
                     
                     
                 }.onDelete(perform: { indexSet in
-                    remediosViewModel.deleteRemedio(index: indexSet)
+                    remediosViewModel.marcarComoDesativado(index: indexSet)
                 })
             }
             
@@ -96,12 +105,12 @@ struct ContentView: View {
                 }
                 
                 photosPickerItem = nil
-
+                
             }
             
         })
-       
-
+        
+    }
         .padding()
     }
 }

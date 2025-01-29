@@ -13,6 +13,7 @@
 		79C451C92D4AA14E0025CA15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C451C82D4AA14E0025CA15 /* Preview Assets.xcassets */; };
 		79C451D02D4AA1870025CA15 /* RemediosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C451CF2D4AA1870025CA15 /* RemediosViewModel.swift */; };
 		79C451D92D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79C451D72D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld */; };
+		79C451DC2D4AC9BA0025CA15 /* EditRemedioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C451DB2D4AC9BA0025CA15 /* EditRemedioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		79C451CF2D4AA1870025CA15 /* RemediosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemediosViewModel.swift; sourceTree = "<group>"; };
 		79C451D82D4AA2DA0025CA15 /* RemediosContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemediosContainer.xcdatamodel; sourceTree = "<group>"; };
 		79C451DA2D4AB7D30025CA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		79C451DB2D4AC9BA0025CA15 /* EditRemedioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRemedioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				79C451C22D4AA14D0025CA15 /* ContentView.swift */,
+				79C451DB2D4AC9BA0025CA15 /* EditRemedioView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				79C451C32D4AA14D0025CA15 /* ContentView.swift in Sources */,
 				79C451D92D4AA2DA0025CA15 /* RemediosContainer.xcdatamodeld in Sources */,
+				79C451DC2D4AC9BA0025CA15 /* EditRemedioView.swift in Sources */,
 				79C451C12D4AA14D0025CA15 /* TestesParaChallenge4App.swift in Sources */,
 				79C451D02D4AA1870025CA15 /* RemediosViewModel.swift in Sources */,
 			);

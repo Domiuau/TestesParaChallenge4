@@ -34,6 +34,13 @@ class RemediosViewModel: ObservableObject {
         
     }
     
+    func marcarComoDesativado(index: IndexSet) {
+        guard let index = index.first else { return }
+        let entidade = entidadeSalvas[index]
+        entidade.ativo = false
+        saveData()
+    }
+    
     func fetchRemedios() {
         let request = NSFetchRequest<RemedioEntity>(entityName: "RemedioEntity")
         
@@ -52,7 +59,18 @@ class RemediosViewModel: ObservableObject {
         newRemedio.dosagem = dosagem
         newRemedio.horario = horario
         newRemedio.imagem = imagem
+        newRemedio.ativo = true
         saveData()
+    }
+    
+    func updateRemedio(nome: String, dosagem: Float, horario: String, imagem: Data, entidade: RemedioEntity) {
+
+        entidade.nome = nome
+        entidade.dosagem = dosagem
+        entidade.horario = horario
+        entidade.imagem = imagem
+        saveData()
+        
     }
     
     func saveData() {
